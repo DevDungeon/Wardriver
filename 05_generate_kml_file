@@ -1,0 +1,3 @@
+# Generate Google Earth .kml file from the SQLite database
+
+giskismet -q "SELECT * FROM WIRELESS" -o access_points.kml

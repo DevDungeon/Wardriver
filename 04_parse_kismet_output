@@ -1,0 +1,4 @@
+# Generate a local SQLite database from Kismet output .netxml
+
+read -p "Enter the path for Kismet's .netxml output: " netxml_file
+giskismet -x $netxml_file
