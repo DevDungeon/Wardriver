@@ -17,28 +17,28 @@ to create the .kml file that can be opened in Google Earth.
 
 ## Instructions
 
-**On the Android device**
+**Prepare the Android device**
 
 * Install the BlueNMEA app on the Android device
-
-* Run BlueNMEA on the device. When running it will tell you it is listening on TCP 4352.
-
 * Connect the Android device to the laptop via USB
+* Run BlueNMEA. When running it will tell you it is listening on TCP 4352.
 
 **On the laptop**
 
-* Forward port from Android device to computer (execute from laptop)
+Forward port from Android device to computer (execute from laptop)
 
 	adb forward tcp:4352 tcp:4352
 
-* Turn on gpsd and have it use the port we forwarded as the source
+Turn on gpsd and have it use the port we forwarded as the source
+
 	gpsd -N -n -D5 tcp://localhost:4352
 
-* Launch Kismet. It will automatically use gpsd on default port
+Launch Kismet. It will automatically use gpsd on default port
 
 	kismet
 
-* When done, get KML file from results
+When done, get KML file from results
 
-	giskismet -x <KismetNetXmlOutputfile>.netxml 
+	giskismet -x <KismetNetXmlOutputfile>.netxml
+
 	giskismet -q "SELECT * FROM WIRELESS" -o access_points.kml
