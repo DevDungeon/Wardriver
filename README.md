@@ -1,4 +1,4 @@
-# NanoWardriver
+# Wardriver
 
 Generate a Google Earth .KML file with wireless access points pinned.
 Pins are color coded based on encryption type. Clicking on a pin shows
